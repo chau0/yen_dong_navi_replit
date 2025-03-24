@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { LanguageSwitcher } from "./language-switcher";
 
 interface NavLinkProps {
   href: string;
@@ -34,6 +36,7 @@ function NavLink({ href, children, isMobile = false, onClick }: NavLinkProps) {
 }
 
 export function Header() {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -61,22 +64,28 @@ export function Header() {
                   <path d="M7 13L3 17L7 21"></path>
                   <path d="M3 17H21"></path>
                 </svg>
-                <span>ExchangeWise</span>
+                <span>{t('appName')}</span>
               </a>
             </Link>
           </div>
           
           {/* Desktop navigation */}
-          <nav className="hidden md:flex space-x-8 text-sm font-medium">
-            <NavLink href="/">Dashboard</NavLink>
-            <NavLink href="/alerts">Alerts</NavLink>
-            <NavLink href="/history">History</NavLink>
-            <NavLink href="/about">About</NavLink>
-          </nav>
+          <div className="hidden md:flex items-center">
+            <nav className="flex space-x-8 text-sm font-medium">
+              <NavLink href="/">{t('header.dashboard')}</NavLink>
+              <NavLink href="/alerts">{t('header.alerts')}</NavLink>
+              <NavLink href="/history">{t('header.history')}</NavLink>
+              <NavLink href="/about">{t('header.about')}</NavLink>
+            </nav>
+            <div className="ml-4">
+              <LanguageSwitcher />
+            </div>
+          </div>
           
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button variant="ghost" size="icon" onClick={toggleMenu} aria-label="Menu">
+          <div className="flex items-center md:hidden">
+            <LanguageSwitcher />
+            <Button variant="ghost" size="icon" onClick={toggleMenu} aria-label="Menu" className="ml-2">
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
@@ -94,10 +103,10 @@ export function Header() {
             transition={{ duration: 0.3 }}
           >
             <div className="px-4 py-3">
-              <NavLink href="/" isMobile onClick={closeMenu}>Dashboard</NavLink>
-              <NavLink href="/alerts" isMobile onClick={closeMenu}>Alerts</NavLink>
-              <NavLink href="/history" isMobile onClick={closeMenu}>History</NavLink>
-              <NavLink href="/about" isMobile onClick={closeMenu}>About</NavLink>
+              <NavLink href="/" isMobile onClick={closeMenu}>{t('header.dashboard')}</NavLink>
+              <NavLink href="/alerts" isMobile onClick={closeMenu}>{t('header.alerts')}</NavLink>
+              <NavLink href="/history" isMobile onClick={closeMenu}>{t('header.history')}</NavLink>
+              <NavLink href="/about" isMobile onClick={closeMenu}>{t('header.about')}</NavLink>
             </div>
           </motion.div>
         )}

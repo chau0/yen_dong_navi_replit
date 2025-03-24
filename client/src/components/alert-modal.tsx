@@ -17,6 +17,7 @@ import { toast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslation } from "react-i18next";
 import {
   Form,
   FormControl,
@@ -32,15 +33,17 @@ interface AlertModalProps {
   currentRate: number;
 }
 
-const formSchema = z.object({
-  email: z.string().email({ message: "Please enter a valid email address" }),
-  targetRate: z.coerce.number().positive({ message: "Rate must be positive" }),
-  isAbove: z.boolean(),
-});
-
-type FormValues = z.infer<typeof formSchema>;
-
 export function AlertModal({ isOpen, onClose, currentRate }: AlertModalProps) {
+  const { t } = useTranslation();
+  
+  const formSchema = z.object({
+    email: z.string().email({ message: t('alertModal.emailError', 'Please enter a valid email address') }),
+    targetRate: z.coerce.number().positive({ message: t('alertModal.rateError', 'Rate must be positive') }),
+    isAbove: z.boolean(),
+  });
+  
+  type FormValues = z.infer<typeof formSchema>;
+  
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -57,8 +60,8 @@ export function AlertModal({ isOpen, onClose, currentRate }: AlertModalProps) {
     },
     onSuccess: () => {
       toast({
-        title: "Alert set successfully",
-        description: "We'll notify you when the exchange rate reaches your target.",
+        title: t('toasts.alertSuccess'),
+        description: t('toasts.alertSuccessDesc'),
       });
       form.reset();
       onClose();
@@ -66,8 +69,8 @@ export function AlertModal({ isOpen, onClose, currentRate }: AlertModalProps) {
     onError: () => {
       toast({
         variant: "destructive",
-        title: "Failed to set alert",
-        description: "Please try again",
+        title: t('toasts.alertError'),
+        description: t('toasts.alertErrorDesc'),
       });
     },
   });
@@ -80,9 +83,9 @@ export function AlertModal({ isOpen, onClose, currentRate }: AlertModalProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Set Exchange Rate Alert</DialogTitle>
+          <DialogTitle>{t('alertModal.title')}</DialogTitle>
           <DialogDescription>
-            We'll notify you when the exchange rate reaches your target value.
+            {t('alertModal.description')}
           </DialogDescription>
         </DialogHeader>
 
@@ -93,7 +96,7 @@ export function AlertModal({ isOpen, onClose, currentRate }: AlertModalProps) {
               name="isAbove"
               render={({ field }) => (
                 <FormItem className="space-y-1">
-                  <FormLabel>Alert Type</FormLabel>
+                  <FormLabel>{t('alertModal.alertType')}</FormLabel>
                   <div className="grid grid-cols-2 gap-3">
                     <div
                       className={`border rounded-lg p-3 flex items-center ${
@@ -108,7 +111,7 @@ export function AlertModal({ isOpen, onClose, currentRate }: AlertModalProps) {
                         className="mr-2"
                       />
                       <Label htmlFor="above" className="text-sm font-medium text-gray-900">
-                        Rate goes above
+                        {t('alertModal.rateGoesAbove')}
                       </Label>
                     </div>
                     <div
@@ -124,7 +127,7 @@ export function AlertModal({ isOpen, onClose, currentRate }: AlertModalProps) {
                         className="mr-2"
                       />
                       <Label htmlFor="below" className="text-sm font-medium text-gray-900">
-                        Rate goes below
+                        {t('alertModal.rateGoesBelow')}
                       </Label>
                     </div>
                   </div>
@@ -138,7 +141,7 @@ export function AlertModal({ isOpen, onClose, currentRate }: AlertModalProps) {
               name="targetRate"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Target Rate (VND per 1 JPY)</FormLabel>
+                  <FormLabel>{t('alertModal.targetRate')}</FormLabel>
                   <div className="relative">
                     <FormControl>
                       <Input
@@ -163,7 +166,7 @@ export function AlertModal({ isOpen, onClose, currentRate }: AlertModalProps) {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email for Notification</FormLabel>
+                  <FormLabel>{t('alertModal.email')}</FormLabel>
                   <FormControl>
                     <Input {...field} type="email" placeholder="your@email.com" />
                   </FormControl>
@@ -174,10 +177,10 @@ export function AlertModal({ isOpen, onClose, currentRate }: AlertModalProps) {
 
             <DialogFooter className="gap-2 sm:gap-0">
               <Button type="button" variant="outline" onClick={onClose}>
-                Cancel
+                {t('alertModal.cancel')}
               </Button>
               <Button type="submit" disabled={alertMutation.isPending}>
-                {alertMutation.isPending ? "Setting Alert..." : "Set Alert"}
+                {alertMutation.isPending ? t('alertModal.settingAlert') : t('alertModal.setAlert')}
               </Button>
             </DialogFooter>
           </form>

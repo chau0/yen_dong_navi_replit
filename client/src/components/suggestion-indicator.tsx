@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { SuggestionType } from "@shared/schema";
+import { useTranslation } from "react-i18next";
 
 interface SuggestionIndicatorProps {
   suggestion: SuggestionType;
 }
 
 export function SuggestionIndicator({ suggestion }: SuggestionIndicatorProps) {
+  const { t } = useTranslation();
+  
   const getSuggestionConfig = (type: SuggestionType) => {
     switch (type) {
       case "good":
@@ -13,7 +16,7 @@ export function SuggestionIndicator({ suggestion }: SuggestionIndicatorProps) {
           bgColor: "bg-green-100",
           dotColor: "bg-green-500",
           textColor: "text-green-500",
-          text: "Good time to exchange",
+          text: t('suggestion.good'),
           animation: "pulse"
         };
       case "neutral":
@@ -21,7 +24,7 @@ export function SuggestionIndicator({ suggestion }: SuggestionIndicatorProps) {
           bgColor: "bg-yellow-100",
           dotColor: "bg-yellow-500",
           textColor: "text-yellow-500", 
-          text: "Neutral exchange time",
+          text: t('suggestion.neutral'),
           animation: "pulse"
         };
       case "bad":
@@ -29,7 +32,7 @@ export function SuggestionIndicator({ suggestion }: SuggestionIndicatorProps) {
           bgColor: "bg-red-100",
           dotColor: "bg-red-500",
           textColor: "text-red-500",
-          text: "Not ideal for exchange",
+          text: t('suggestion.bad'),
           animation: "shake"
         };
       default:
@@ -37,7 +40,7 @@ export function SuggestionIndicator({ suggestion }: SuggestionIndicatorProps) {
           bgColor: "bg-gray-100",
           dotColor: "bg-gray-500",
           textColor: "text-gray-500",
-          text: "Loading suggestion...",
+          text: t('loading.suggestion'),
           animation: "none"
         };
     }
