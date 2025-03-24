@@ -1,0 +1,87 @@
+{
+  "appName": "ExchangeWise",
+  "header": {
+    "dashboard": "Bảng điều khiển",
+    "alerts": "Cảnh báo",
+    "history": "Lịch sử",
+    "about": "Giới thiệu"
+  },
+  "home": {
+    "title": "Tư vấn tỷ giá JPY sang VND",
+    "subtitle": "Đưa ra quyết định thông minh hơn với dữ liệu tỷ giá thời gian thực và đề xuất được hỗ trợ bởi AI"
+  },
+  "exchangeRate": {
+    "title": "Tỷ giá hiện tại",
+    "lastUpdated": "Cập nhật lần cuối",
+    "japaneseYen": "Yên Nhật",
+    "vietnameseDong": "Đồng Việt Nam",
+    "exchangeRate": "Tỷ giá",
+    "perJPY": "VND cho 1 JPY",
+    "setAlert": "Đặt cảnh báo"
+  },
+  "suggestion": {
+    "good": "Thời điểm tốt để đổi tiền",
+    "neutral": "Thời điểm bình thường để đổi tiền",
+    "bad": "Không lý tưởng để đổi tiền"
+  },
+  "historicalChart": {
+    "title": "Tỷ giá lịch sử",
+    "highest": "Cao nhất",
+    "lowest": "Thấp nhất",
+    "average": "Trung bình"
+  },
+  "aiForecast": {
+    "title": "Dự báo AI",
+    "days": "7 Ngày",
+    "trend": "Dự kiến xu hướng tăng",
+    "analysis": "AI của chúng tôi dự đoán sẽ tăng {{percentage}}% trong tuần tới, khiến đây là thời điểm thuận lợi để đổi JPY sang VND."
+  },
+  "communityPoll": {
+    "title": "Ý kiến cộng đồng",
+    "question": "Bạn có nghĩ bây giờ là thời điểm tốt để đổi JPY sang VND không?",
+    "yes": "Có",
+    "neutral": "Trung lập",
+    "no": "Không",
+    "votes": "phiếu bầu"
+  },
+  "alertModal": {
+    "title": "Đặt cảnh báo tỷ giá",
+    "description": "Chúng tôi sẽ thông báo cho bạn khi tỷ giá đạt đến giá trị mục tiêu của bạn.",
+    "alertType": "Loại cảnh báo",
+    "rateGoesAbove": "Tỷ giá vượt qua",
+    "rateGoesBelow": "Tỷ giá xuống dưới",
+    "targetRate": "Tỷ giá mục tiêu (VND cho 1 JPY)",
+    "email": "Email để nhận thông báo",
+    "cancel": "Hủy bỏ",
+    "setAlert": "Đặt cảnh báo",
+    "settingAlert": "Đang đặt cảnh báo..."
+  },
+  "toasts": {
+    "alertSuccess": "Đặt cảnh báo thành công",
+    "alertSuccessDesc": "Chúng tôi sẽ thông báo cho bạn khi tỷ giá đạt đến mục tiêu của bạn.",
+    "alertError": "Không thể đặt cảnh báo",
+    "alertErrorDesc": "Vui lòng thử lại",
+    "voteSuccess": "Đã gửi bình chọn",
+    "voteSuccessDesc": "Cảm ơn phản hồi của bạn!",
+    "voteError": "Không thể gửi bình chọn",
+    "voteErrorDesc": "Vui lòng thử lại"
+  },
+  "errors": {
+    "rateError": "Lỗi tải dữ liệu tỷ giá. Vui lòng thử lại.",
+    "historyError": "Lỗi tải dữ liệu lịch sử. Vui lòng thử lại.",
+    "forecastError": "Lỗi tải dữ liệu dự báo. Vui lòng thử lại.",
+    "pollError": "Lỗi tải dữ liệu bình chọn. Vui lòng thử lại."
+  },
+  "loading": {
+    "suggestion": "Đang tải đề xuất...",
+    "chart": "Đang tải dữ liệu biểu đồ...",
+    "forecast": "Đang tải dữ liệu dự báo...",
+    "analyzing": "Đang phân tích dữ liệu dự báo..."
+  },
+  "language": {
+    "select": "Chọn ngôn ngữ",
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt",
+    "ja": "Tiếng Nhật"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "appName": "ExchangeWise",
+  "header": {
+    "dashboard": "Dashboard",
+    "alerts": "Alerts",
+    "history": "History",
+    "about": "About"
+  },
+  "home": {
+    "title": "JPY to VND Exchange Rate Advisor",
+    "subtitle": "Make smarter decisions with real-time exchange rate data and AI-powered suggestions"
+  },
+  "exchangeRate": {
+    "title": "Current Exchange Rate",
+    "lastUpdated": "Last updated",
+    "japaneseYen": "Japanese Yen",
+    "vietnameseDong": "Vietnamese Dong",
+    "exchangeRate": "Exchange Rate",
+    "perJPY": "VND per JPY",
+    "setAlert": "Set Alert"
+  },
+  "suggestion": {
+    "good": "Good time to exchange",
+    "neutral": "Neutral exchange time",
+    "bad": "Not ideal for exchange"
+  },
+  "historicalChart": {
+    "title": "Historical Exchange Rate",
+    "highest": "Highest",
+    "lowest": "Lowest",
+    "average": "Average"
+  },
+  "aiForecast": {
+    "title": "AI Forecast",
+    "days": "7 Days",
+    "trend": "Upward Trend Expected",
+    "analysis": "Our AI predicts a {{percentage}}% increase over the next week, making this a favorable time to exchange JPY to VND."
+  },
+  "communityPoll": {
+    "title": "Community Sentiment",
+    "question": "Do you think now is a good time to exchange JPY to VND?",
+    "yes": "Yes",
+    "neutral": "Neutral",
+    "no": "No",
+    "votes": "votes"
+  },
+  "alertModal": {
+    "title": "Set Exchange Rate Alert",
+    "description": "We'll notify you when the exchange rate reaches your target value.",
+    "alertType": "Alert Type",
+    "rateGoesAbove": "Rate goes above",
+    "rateGoesBelow": "Rate goes below",
+    "targetRate": "Target Rate (VND per 1 JPY)",
+    "email": "Email for Notification",
+    "cancel": "Cancel",
+    "setAlert": "Set Alert",
+    "settingAlert": "Setting Alert..."
+  },
+  "toasts": {
+    "alertSuccess": "Alert set successfully",
+    "alertSuccessDesc": "We'll notify you when the exchange rate reaches your target.",
+    "alertError": "Failed to set alert",
+    "alertErrorDesc": "Please try again",
+    "voteSuccess": "Vote submitted",
+    "voteSuccessDesc": "Thank you for your feedback!",
+    "voteError": "Failed to submit vote",
+    "voteErrorDesc": "Please try again"
+  },
+  "errors": {
+    "rateError": "Error loading exchange rate data. Please try again.",
+    "historyError": "Error loading historical data. Please try again.",
+    "forecastError": "Error loading forecast data. Please try again.",
+    "pollError": "Error loading poll data. Please try again."
+  },
+  "loading": {
+    "suggestion": "Loading suggestion...",
+    "chart": "Loading chart data...",
+    "forecast": "Loading forecast data...",
+    "analyzing": "Analyzing forecast data..."
+  },
+  "language": {
+    "select": "Select Language",
+    "en": "English",
+    "vi": "Vietnamese",
+    "ja": "Japanese"
+  }
+}

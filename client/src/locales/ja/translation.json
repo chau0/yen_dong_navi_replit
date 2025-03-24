@@ -1,0 +1,87 @@
+{
+  "appName": "ExchangeWise",
+  "header": {
+    "dashboard": "ダッシュボード",
+    "alerts": "アラート",
+    "history": "履歴",
+    "about": "概要"
+  },
+  "home": {
+    "title": "円からベトナムドンへの為替レートアドバイザー",
+    "subtitle": "リアルタイムの為替レートデータとAIを活用した提案でより賢明な決断を"
+  },
+  "exchangeRate": {
+    "title": "現在の為替レート",
+    "lastUpdated": "最終更新",
+    "japaneseYen": "日本円",
+    "vietnameseDong": "ベトナムドン",
+    "exchangeRate": "為替レート",
+    "perJPY": "1円あたりのドン",
+    "setAlert": "アラート設定"
+  },
+  "suggestion": {
+    "good": "両替に適した時期",
+    "neutral": "普通の両替時期",
+    "bad": "両替に適さない時期"
+  },
+  "historicalChart": {
+    "title": "過去の為替レート",
+    "highest": "最高値",
+    "lowest": "最安値",
+    "average": "平均"
+  },
+  "aiForecast": {
+    "title": "AI予測",
+    "days": "7日間",
+    "trend": "上昇傾向が予想されます",
+    "analysis": "AIは来週に{{percentage}}%の上昇を予測しており、円からベトナムドンへの両替に適した時期です。"
+  },
+  "communityPoll": {
+    "title": "コミュニティの意見",
+    "question": "現在は円からベトナムドンへの両替に適していると思いますか？",
+    "yes": "はい",
+    "neutral": "どちらでもない",
+    "no": "いいえ",
+    "votes": "票"
+  },
+  "alertModal": {
+    "title": "為替レートアラートの設定",
+    "description": "為替レートが目標値に達したらお知らせします。",
+    "alertType": "アラートタイプ",
+    "rateGoesAbove": "レートが上回る",
+    "rateGoesBelow": "レートが下回る",
+    "targetRate": "目標レート（1円あたりのドン）",
+    "email": "通知用メール",
+    "cancel": "キャンセル",
+    "setAlert": "アラート設定",
+    "settingAlert": "アラート設定中..."
+  },
+  "toasts": {
+    "alertSuccess": "アラート設定完了",
+    "alertSuccessDesc": "為替レートが目標に達したらお知らせします。",
+    "alertError": "アラート設定失敗",
+    "alertErrorDesc": "もう一度お試しください",
+    "voteSuccess": "投票送信完了",
+    "voteSuccessDesc": "フィードバックありがとうございます！",
+    "voteError": "投票送信失敗",
+    "voteErrorDesc": "もう一度お試しください"
+  },
+  "errors": {
+    "rateError": "為替レートデータの読み込みエラー。もう一度お試しください。",
+    "historyError": "過去データの読み込みエラー。もう一度お試しください。",
+    "forecastError": "予測データの読み込みエラー。もう一度お試しください。",
+    "pollError": "投票データの読み込みエラー。もう一度お試しください。"
+  },
+  "loading": {
+    "suggestion": "提案を読み込み中...",
+    "chart": "チャートデータを読み込み中...",
+    "forecast": "予測データを読み込み中...",
+    "analyzing": "予測データを分析中..."
+  },
+  "language": {
+    "select": "言語を選択",
+    "en": "英語",
+    "vi": "ベトナム語",
+    "ja": "日本語"
+  }
+}
