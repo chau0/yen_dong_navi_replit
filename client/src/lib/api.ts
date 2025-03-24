@@ -2,6 +2,8 @@
 
 import { SuggestionType } from "./utils";
 
+export const API_BASE_URL = 'http://localhost:8000';
+
 // Rate history entry
 export interface RateHistoryEntry {
   date: string;
@@ -48,43 +50,50 @@ export interface AlertSettings {
   email: string;
 }
 
+const fetchOptions: RequestInit = {
+  mode: 'cors',
+  headers: {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+  },
+  // Remove or set to 'same-origin' instead of 'include'
+  credentials: 'omit'
+};
 // Fetch the current exchange rate
 export async function fetchCurrentRate(): Promise<CurrentRateInfo> {
-  const response = await fetch('/api/rate/current');
+  const response = await fetch(`${API_BASE_URL}/api/rate/current`, fetchOptions);
   return response.json();
 }
 
 // Fetch the exchange rate history
 export async function fetchRateHistory(): Promise<RateHistoryEntry[]> {
-  const response = await fetch('/api/rate/history');
+  const response = await fetch(`${API_BASE_URL}/api/rate/history`, fetchOptions);
   return response.json();
 }
 
 // Fetch the exchange rate forecast
 export async function fetchRateForecast(): Promise<ForecastEntry[]> {
-  const response = await fetch('/api/forecast');
+  const response = await fetch(`${API_BASE_URL}/api/forecast`, fetchOptions);
   return response.json();
 }
 
 // Fetch the exchange rate suggestion
 export async function fetchSuggestion(): Promise<SuggestionResponse> {
-  const response = await fetch('/api/suggestion');
+  const response = await fetch(`${API_BASE_URL}/api/suggestion`, fetchOptions);
   return response.json();
 }
 
 // Fetch the poll data
 export async function fetchPollData(): Promise<PollData> {
-  const response = await fetch('/api/poll');
+  const response = await fetch(`${API_BASE_URL}/api/poll/summary`, fetchOptions);
   return response.json();
 }
 
 // Submit a vote to the poll
 export async function submitVote(vote: SuggestionType): Promise<PollData> {
-  const response = await fetch('/api/poll/vote', {
+  const response = await fetch(`${API_BASE_URL}/api/poll/vote`, {
+    ...fetchOptions,
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify({ vote }),
   });
   return response.json();
@@ -92,11 +101,9 @@ export async function submitVote(vote: SuggestionType): Promise<PollData> {
 
 // Set an alert for the exchange rate
 export async function setAlert(alert: AlertSettings): Promise<{ success: boolean; message: string }> {
-  const response = await fetch('/api/alert', {
+  const response = await fetch(`${API_BASE_URL}/api/alert`, {
+    ...fetchOptions,
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify(alert),
   });
   return response.json();
