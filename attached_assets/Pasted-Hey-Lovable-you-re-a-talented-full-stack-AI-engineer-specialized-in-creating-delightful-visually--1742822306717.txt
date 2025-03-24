@@ -1,0 +1,55 @@
+Hey Lovable, you're a talented, full-stack AI engineer specialized in creating delightful, visually stunning React frontends connected to FastAPI backends. Let's build an engaging and attractive web application together!
+
+### 🚀 **Project Goal:**
+Create a visually impressive, intuitive, and interactive frontend web app that helps users easily evaluate if **now is a good time to exchange Japanese Yen (JPY) to Vietnamese Dong (VND)**. This app will stand out by combining smart data-driven suggestions, sleek visuals, and delightful interactions.
+
+### 🎯 **Frontend Requirements (React):**
+- **Framework:** React.js (using Vite or Next.js)
+- **UI & Styling:** Tailwind CSS, TailwindUI, or Shadcn/ui components
+- **Animations & Interactions:** Framer Motion (for smooth and charming animations)
+- **Data Visualization:** Interactive charts (Recharts) clearly showing exchange rate history and predictions
+- **Mobile-first:** Fully responsive, modern design optimized for all devices.
+
+### 📌 **Key Components to Develop:**
+- **Real-time Exchange Rate Display:**  
+  Animated, easy-to-read card showing the latest exchange rate (JPY→VND).
+
+- **Smart Suggestion Indicator (Traffic-light style):**  
+  Animated badges clearly indicating:
+  - 🟢 "Good" (positive animations)
+  - 🟡 "Neutral" (gentle pulsing animations)
+  - 🔴 "Bad" (subtle shake or fade animations)
+
+- **Historical Exchange Rate Chart:**  
+  Interactive, responsive line chart displaying the last 30 days, with smooth hover interactions for detailed insights.
+
+- **AI Forecast Chart:**  
+  Delightful animated forecast visualization for the upcoming 7 days with clear "confidence bands".
+
+- **Customizable Alerts Modal:**  
+  Beautifully designed popup/modal allowing users to set alerts when the exchange rate hits their desired threshold.
+
+- **User Interaction Poll ("Good time?" Vote):**  
+  Engaging and visually appealing poll allowing users to vote and see real-time results.
+
+### ⚙️ **Backend Integration (FastAPI endpoints to use):**
+- `/api/rate/current`: Fetch current exchange rate.
+- `/api/rate/history`: Fetch last 30 days’ historical exchange rates.
+- `/api/forecast`: Fetch forecasted exchange rates (next 7 days).
+- `/api/suggestion`: Get current exchange recommendation ("Good"/"Neutral"/"Bad").
+- `/api/alert`: Set custom exchange rate alerts.
+
+*(Mock APIs can initially be used for frontend testing)*
+
+### 🛠️ **Deliverables from Lovable:**
+Please provide:
+- Structured React project file tree.
+- Clearly commented, production-ready React components with interactive animations.
+- Examples of fetching and displaying data from provided FastAPI endpoints.
+- Animated UI components and attractive design patterns using Tailwind and Framer Motion.
+- Recommendations for any additional libraries or tools needed for a delightful user experience.
+
+### 🌟 **Outcome Expectation:**
+The final app should be lovable, delightful, visually stunning, and impress users immediately upon interaction. Focus heavily on intuitive UX, appealing UI, and engaging animations.
+
+Provide your response structured clearly in markdown for easy integration and copying.
